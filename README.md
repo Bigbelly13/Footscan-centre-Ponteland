@@ -8,7 +8,7 @@ A static, responsive website for a foot-scanning and sports rehabilitation clini
 - `services.html` — Full service descriptions and pricing table
 - `about.html` — Clinic story, values, and team
 - `contact.html` — Contact details, opening hours, map, and general enquiry form
-- `book-appointment.html` — Booking info (links out to Momentum) and FAQ
+- `book-appointment.html` — Embedded Rehab Guru booking calendar and FAQ
 
 ## The three services
 
@@ -41,7 +41,17 @@ All three services link out to Momentum's real booking system:
 - Footscan/Orthotics service info: `https://momentumsic.com/services/footscan-and-orthotics/`
 - "What is a Footscan?": `https://momentumsic.com/what-is-the-footscan-assessment/`
 
-These appear on `index.html` (service card notes), `services.html` (`#scanning`, `#orthotics` and `#biomechanics` sections, plus the pricing table), and `book-appointment.html` (the whole page is now built around this booking info — see below). If Momentum restructures their URLs, double-check these links still resolve.
+These appear on `index.html` (service card notes) and `services.html` (`#scanning`, `#orthotics` and `#biomechanics` sections, plus the pricing table) as `target="_blank"` links out to Momentum's site. If Momentum restructures their URLs, double-check these still resolve.
+
+### Embedded booking calendar (Rehab Guru)
+
+`book-appointment.html` no longer just links out — it embeds Momentum's actual Rehab Guru booking widget in an iframe, so visitors can pick a service and time slot without leaving the site:
+
+```html
+<iframe src="https://bookings.rehabguru.com/e4448d58e79ddd7a5b9ef15d20ec50dc%3A02c0d91758ba51e86d3c6e571ec7447352a49979f02953267f0de7f2423969a7" ...>
+```
+
+This is the direct widget URL supplied for embedding — the same one Momentum embeds on their own `/book-online/` page. Rehab Guru's own docs say the embed is tied to the domain registered against the booking link (Account → Appointments → Portal Settings → URLs and Embeds), so **the calendar may not render until Momentum adds this site's real production domain to that allow-list** — until then (or in any sandboxed/offline preview) it'll show as an empty box. A fallback line under the iframe links out to `https://momentumsic.com/book-online/` and the phone number in case the embed doesn't load. Styling is in `.booking-embed` / `.booking-embed iframe` in `css/style.css` (900px tall, 700px on mobile — adjust if Rehab Guru's widget needs more or less room).
 
 ### Scope corrections: podiatry, sports assessment and diabetic care all removed
 
@@ -50,7 +60,7 @@ Two rounds of corrections narrowed the site down to the real three-service scope
 1. **Podiatry/chiropody removed.** Carl Bell and Kate Disley are physiotherapy/sport rehabilitation practitioners, not podiatrists, so every mention of "podiatry"/"chiropody" was removed, including the standalone "General Podiatry & Chiropody" service (nail care, corns, calluses, verruca and ingrown toenail treatment).
 2. **Sports assessment and diabetic foot care removed.** The clinic confirmed it does not provide nail/footbed care, podiatry, or diabetic risk screening — the *only* services are Footscan Assessment, Biomechanical Assessment and Phits Orthotics. This meant removing the "Running & Sports Assessment" and "Diabetic & At-Risk Foot Care" sections entirely (not just renaming them), including their service cards, dedicated `services.html` sections, pricing rows, and footer links.
 
-The second round also removed `book-appointment.html`'s local "Appointment request" form: it existed only to book the in-house services that turned out not to exist, so once Sports Assessment and Diabetic Foot Care were gone there was nothing left for it to book. The page is now a single booking-info card (the three real services, their prices, and links to Momentum's booking system) alongside the FAQ, rather than a form + FAQ layout. The general enquiry form on `contact.html` is unaffected — that's for questions, not appointment booking, and was never service-specific.
+The second round also removed `book-appointment.html`'s local "Appointment request" form: it existed only to book the in-house services that turned out not to exist, so once Sports Assessment and Diabetic Foot Care were gone there was nothing left for it to book. That page then went through a further change — see "Embedded booking calendar" below — from a links-out card to an embedded Rehab Guru widget. The general enquiry form on `contact.html` is unaffected throughout — that's for questions, not appointment booking, and was never service-specific.
 
 If further corrections come in, the pattern to check is the same each time: `index.html` service grid, `services.html` sections + pricing table, `book-appointment.html` booking summary, and the "Services" list in every page's footer (`index.html`, `services.html`, `about.html`, `contact.html`, `book-appointment.html` — it's duplicated identically on all five).
 
