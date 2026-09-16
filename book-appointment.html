@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book an Appointment | Footscan Centre Ponteland</title>
+<meta name="description" content="Book a 3D foot scan, gait analysis or podiatry appointment at Footscan Centre Ponteland.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="demo-banner">
+  <strong>Sample website:</strong> all content, prices, hours and contact details below are placeholders — replace them with your real details before publishing.
+</div>
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="nav-brand">
+      <span class="logo-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16c0-3 1-5 1-8a3 3 0 0 1 6 0c0 2-1 3-1 5"/><path d="M14 20c0-3 1-5 1-8a3 3 0 0 1 6 0c0 3-1 5-1 8"/><path d="M4 16c0 2 1.5 4 4 4h1"/></svg>
+      </span>
+      <span>Footscan Centre<small>Ponteland</small></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="tel:01661000000" class="nav-phone">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        01661 000 000
+      </a>
+      <a href="book-appointment.html" class="btn btn-primary">Book a Scan</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a> / Book an Appointment</div>
+      <h1>Book an Appointment</h1>
+      <p>Fill in the form below and our team will confirm your appointment by phone or email within one working day.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="contact-layout">
+
+        <div class="form-card">
+          <h2>Appointment request</h2>
+          <div class="form-success" id="form-success">
+            Thank you — your appointment request has been received! This is a demo form, so nothing was actually sent; connect it to a form backend (e.g. Formspree, Netlify Forms) or booking system to go live.
+          </div>
+          <form id="booking-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="b-name">Full name</label>
+                <input type="text" id="b-name" name="name" required>
+                <span class="form-error">Please enter your name.</span>
+              </div>
+              <div class="form-group">
+                <label for="b-phone">Phone number</label>
+                <input type="tel" id="b-phone" name="phone" required>
+                <span class="form-error">Please enter a valid phone number.</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="b-email">Email address</label>
+              <input type="email" id="b-email" name="email" required>
+              <span class="form-error">Please enter a valid email address.</span>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="b-service">Service</label>
+                <select id="b-service" name="service" required>
+                  <option value="">Select a service</option>
+                  <option value="scan">3D Foot &amp; Gait Scan — £65</option>
+                  <option value="orthotics">Custom Orthotics — from £220</option>
+                  <option value="sports">Running &amp; Sports Assessment — £85</option>
+                  <option value="biomechanics">Biomechanical Assessment — £90</option>
+                  <option value="diabetic">Diabetic Foot Health Check — £45</option>
+                  <option value="podiatry">General Podiatry / Chiropody — £40–£55</option>
+                </select>
+                <span class="form-error">Please select a service.</span>
+              </div>
+              <div class="form-group">
+                <label for="b-date">Preferred date</label>
+                <input type="date" id="b-date" name="date" required>
+                <span class="form-error">Please choose a preferred date.</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="b-time">Preferred time</label>
+              <select id="b-time" name="time" required>
+                <option value="">Select a time</option>
+                <option value="morning">Morning (9am – 12pm)</option>
+                <option value="afternoon">Afternoon (12pm – 3pm)</option>
+                <option value="late-afternoon">Late afternoon (3pm – 5:30pm)</option>
+                <option value="evening">Evening (Wednesdays only, 5:30pm – 7pm)</option>
+              </select>
+              <span class="form-error">Please select a preferred time.</span>
+            </div>
+            <div class="form-group">
+              <label for="b-notes">Anything we should know? (optional)</label>
+              <textarea id="b-notes" name="notes" placeholder="e.g. specific symptoms, previous injuries, referral details"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Request Appointment</button>
+            <p class="form-note">This form sends a request only — we'll confirm your exact appointment time by phone or email. For same-day or urgent bookings, please call us directly on 01661 000 000.</p>
+          </form>
+        </div>
+
+        <div>
+          <span class="eyebrow">Before you book</span>
+          <h2>Frequently asked questions</h2>
+
+          <div class="faq-item open">
+            <button class="faq-question">
+              What should I bring to my first appointment?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer" style="max-height: 200px;">
+              <p>Please bring the shoes you wear most often (including sports trainers, if relevant), any existing insoles or orthotics, and a list of current medications if you're being seen for diabetic foot care.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              Do I need a GP referral?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No referral is needed — you can book directly. If you have a referral letter from your GP or physiotherapist, please bring it along or email it to us in advance.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              Is Footscan Centre covered by health insurance?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Many major health insurers cover podiatry assessments — please check directly with your provider. We can provide an itemised invoice for you to claim back.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              How long until my custom orthotics are ready?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Custom orthotics are typically ready for collection or fitting within 2–3 weeks of your scan appointment.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              What is your cancellation policy?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>We kindly ask for at least 24 hours' notice if you need to cancel or reschedule, so we can offer the slot to another patient.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="footer-brand">
+          <span class="logo-mark">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16c0-3 1-5 1-8a3 3 0 0 1 6 0c0 2-1 3-1 5"/><path d="M14 20c0-3 1-5 1-8a3 3 0 0 1 6 0c0 3-1 5-1 8"/><path d="M4 16c0 2 1.5 4 4 4h1"/></svg>
+          </span>
+          Footscan Centre Ponteland
+        </a>
+        <p>Independent foot scanning and podiatry clinic serving Ponteland, Darras Hall and Newcastle upon Tyne.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="white"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html#scanning">3D Foot Scanning</a></li>
+          <li><a href="services.html#orthotics">Custom Orthotics</a></li>
+          <li><a href="services.html#sports">Sports Assessment</a></li>
+          <li><a href="services.html#podiatry">General Podiatry</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li>12 High Street, Ponteland<br>Newcastle upon Tyne, NE20 9BE</li>
+          <li><a href="tel:01661000000">01661 000 000</a></li>
+          <li><a href="mailto:hello@footscancentreponteland.co.uk">hello@footscancentreponteland.co.uk</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span data-year></span> Footscan Centre Ponteland. All rights reserved.</span>
+      <span>Sample content for demonstration purposes.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
