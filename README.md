@@ -40,15 +40,15 @@ The header, footer, and `contact.html` now show Momentum Sports Injury Clinic's 
 - **Address:** Unit 4, The Green House, Meadowfield Industrial Estate, Ponteland, Newcastle upon Tyne, NE20 9SD
 - **Phone:** 0191 645 2535
 - **Email:** info@momentumsic.com
+- **Opening hours:** Mon 7am–8pm, Tue 8am–8pm, Wed 8am–4pm, Thu 7am–8pm, Fri 8am–4pm, Sat/Sun closed
 - **Map:** `contact.html`'s embed points at approximate coordinates for Meadowfield Industrial Estate (55.0518, -1.7500) — not verified against the exact building.
 
 ## ⚠️ Before publishing — replace remaining placeholder content
 
-This is a demo build. Every page includes a yellow banner noting what's still placeholder — **remove that banner once real content is in place**. Address/phone/email are already real (see above); the following are still fictional and need updating before going live:
+This is a demo build. Every page includes a yellow banner noting what's still placeholder — **remove that banner once real content is in place**. Address/phone/email/hours are already real (see above); the following are still fictional and need updating before going live:
 
 - **Team bios** on `about.html` — currently fictional placeholder names/photos.
 - **Pricing** on `services.html` — currently illustrative figures for the in-house services (Footscan/Orthotics rows already link to Momentum's own pricing).
-- **Opening hours** on `contact.html` — currently placeholder hours; confirm against Momentum's actual Ponteland hours.
 - **Testimonials** on `index.html` — currently fictional placeholder quotes.
 - **Map embed** on `contact.html` — approximate coordinates only; verify against the exact building/unit, or swap for a Google Maps embed.
 - **Social links** in the footer — currently placeholder `#` links.
