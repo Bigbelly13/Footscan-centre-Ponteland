@@ -45,13 +45,14 @@ These appear on `index.html` (service card notes) and `services.html` (`#scannin
 
 ### Embedded booking calendar (Rehab Guru)
 
-`book-appointment.html` no longer just links out — it embeds Momentum's actual Rehab Guru booking widget in an iframe, so visitors can pick a service and time slot without leaving the site:
+`book-appointment.html` no longer just links out — it embeds Momentum's actual Rehab Guru booking widget using the exact embed code Rehab Guru generates (id, inline sizing, and the `postMessage` auto-resize script all preserved as supplied, not rewritten):
 
 ```html
-<iframe src="https://bookings.rehabguru.com/e4448d58e79ddd7a5b9ef15d20ec50dc%3A02c0d91758ba51e86d3c6e571ec7447352a49979f02953267f0de7f2423969a7" ...>
+<script>window.addEventListener("message",(function(e){if(e.data&&"updateHeight"===e.data.type){const t=document.getElementById("bkv2__app");t&&(t.style.height=e.data.height)}}),!1);</script>
+<iframe id="bkv2__app" src="https://bookings.rehabguru.com/3c62a561176c271866343820cacef116%3Ab18a9ce84db21d195dc7e3942595cb081869aef6105fc301386e96a9cb73dbfe" frameborder="0" style="width: 100%; height: 800px; border: none;" title="Booking Application"></iframe>
 ```
 
-This is the direct widget URL supplied for embedding — the same one Momentum embeds on their own `/book-online/` page. Rehab Guru's own docs say the embed is tied to the domain registered against the booking link (Account → Appointments → Portal Settings → URLs and Embeds), so **the calendar may not render until Momentum adds this site's real production domain to that allow-list** — until then (or in any sandboxed/offline preview) it'll show as an empty box. A fallback line under the iframe links out to `https://momentumsic.com/book-online/` and the phone number in case the embed doesn't load. Styling is in `.booking-embed` / `.booking-embed iframe` in `css/style.css` (900px tall, 700px on mobile — adjust if Rehab Guru's widget needs more or less room).
+The script listens for `updateHeight` messages from the iframe and resizes it live to fit the widget's content, so it self-adjusts (no fixed mobile/desktop height needed — `css/style.css`'s `.booking-embed iframe` rule only sets `display: block` and otherwise leaves sizing to the inline styles/script above). As with the plain links, Rehab Guru's embed is typically tied to a domain registered in their dashboard (Account → Appointments → Portal Settings → URLs and Embeds), so **the calendar may not render until Momentum adds this site's real production domain to that allow-list** — until then, or in any sandboxed/offline preview, it shows as an empty box. A fallback line under the iframe links to `https://momentumsic.com/book-online/` and the phone number in case the embed doesn't load.
 
 ### Scope corrections: podiatry, sports assessment and diabetic care all removed
 
