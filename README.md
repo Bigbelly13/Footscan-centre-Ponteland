@@ -100,7 +100,7 @@ This is a demo build. Every page includes a yellow banner noting what's still pl
 - **Testimonials** on `index.html` — currently fictional placeholder quotes.
 - **Map embed** on `contact.html` — approximate coordinates only; verify against the exact building/unit, or swap for a Google Maps embed.
 - **Social links** in the footer — currently placeholder `#` links.
-- **Images** — the homepage hero photo and Carl/Kate's team photos are real (`images/`); service-section illustrations and icons elsewhere still use inline SVG instead of photos. Three further real Phits/footscan photos (orthotics packaging, the Phits+ device, a pressure-mapped shoe) are in `images/` but not yet placed on any page.
+- **Images** — the homepage hero photo, Carl/Kate's team photos, and all three `services.html` section photos (footscan pressure-mapped shoe, Phits orthotics packaging, the Phits+ device) are real (`images/`). Everything else — small icon badges, the "our story" and "why footscan centre" illustrations on `index.html`/`about.html` — still uses inline SVG instead of photos. Note: the Biomechanical Assessment section reuses the Phits+ device photo since there's no dedicated biomechanical-assessment photo available — swap it out if a better one turns up, since that device is really Phits/orthotics hardware, not biomechanical-assessment-specific.
 - **Contact form** — `contact.html`'s general enquiry form is front-end only (it validates and shows a success message but doesn't send anywhere). Connect it to a real backend such as [Formspree](https://formspree.io), [Netlify Forms](https://docs.netlify.com/forms/setup/), or similar. `book-appointment.html` no longer has its own form — booking goes through Momentum's system instead (see above).
 
 ## Local preview
