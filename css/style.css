@@ -336,39 +336,42 @@ section {
 
 .hero-visual {
   position: relative;
-  background: linear-gradient(160deg, var(--color-primary), var(--color-primary-dark));
-  border-radius: 24px;
-  padding: 32px;
-  color: #fff;
-  min-height: 380px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 20px;
+}
+
+.hero-photo {
+  border-radius: 24px;
+  overflow: hidden;
   box-shadow: var(--shadow-hover);
+  background: #fff;
+  aspect-ratio: 4 / 5;
 }
 
-.hero-visual .scan-graphic {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-visual .scan-graphic svg {
+.hero-photo img {
   width: 100%;
-  max-width: 260px;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 100%;
+  display: block;
 }
 
 .hero-visual-card {
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: linear-gradient(160deg, var(--color-primary), var(--color-primary-dark));
+  color: #fff;
   border-radius: var(--radius);
   padding: 16px 18px;
   font-size: 0.9rem;
   display: flex;
   align-items: center;
   gap: 12px;
+  box-shadow: var(--shadow);
+  margin-top: -56px;
+  margin-left: 20px;
+  margin-right: 20px;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-visual-card svg {
