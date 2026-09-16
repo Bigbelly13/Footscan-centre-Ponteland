@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Book an Appointment | Footscan Centre Ponteland</title>
-<meta name="description" content="Book a footscan® gait analysis, Phits orthotics or sports rehabilitation appointment at Footscan Centre Ponteland.">
+<meta name="description" content="Book a footscan® gait analysis, Phits orthotics or biomechanical assessment appointment at Footscan Centre Ponteland.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
@@ -49,7 +49,7 @@
     <div class="container">
       <div class="breadcrumb"><a href="index.html">Home</a> / Book an Appointment</div>
       <h1>Book an Appointment</h1>
-      <p>Fill in the form below and our team will confirm your appointment by phone or email within one working day.</p>
+      <p>All of our services are delivered in partnership with Momentum Sports Injury Clinic and booked directly through their booking system.</p>
     </div>
   </section>
 
@@ -58,71 +58,18 @@
       <div class="contact-layout">
 
         <div class="form-card">
-          <div class="partner-callout">
-            <h3>Booking a Footscan, Orthotics or Biomechanical Assessment?</h3>
-            <p>These three are delivered in partnership with <strong>Momentum Sports Injury Clinic</strong> and are each booked — and charged — separately: Footscan Assessment £90, Phits Orthotics £240, Biomechanical Assessment £80. Please book directly through Momentum's own booking system rather than the form below.</p>
-            <div class="btn-row">
-              <a href="https://momentumsic.com/book-online/" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Book via Momentum SIC →</a>
-              <a href="https://momentumsic.com/what-is-the-footscan-assessment/" target="_blank" rel="noopener" class="btn btn-outline-dark btn-sm">What is a Footscan?</a>
-            </div>
+          <h2>Booking a Footscan, Orthotics or Biomechanical Assessment?</h2>
+          <p>These three are delivered in partnership with <strong>Momentum Sports Injury Clinic</strong> and are each booked — and charged — separately.</p>
+          <ul class="check-list" style="margin: 20px 0;">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>Footscan Assessment — £90 (45 min)</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>Phits Orthotics — £240 per pair</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>Biomechanical Assessment — £80 (60 min)</span></li>
+          </ul>
+          <div class="btn-row">
+            <a href="https://momentumsic.com/book-online/" target="_blank" rel="noopener" class="btn btn-primary">Book via Momentum SIC →</a>
+            <a href="https://momentumsic.com/what-is-the-footscan-assessment/" target="_blank" rel="noopener" class="btn btn-outline-dark">What is a Footscan?</a>
           </div>
-          <h2>Appointment request</h2>
-          <p class="form-note" style="margin-top: -8px; margin-bottom: 20px;">Use this form for our other in-house services — sports assessment and diabetic foot care.</p>
-          <div class="form-success" id="form-success">
-            Thank you — your appointment request has been received! This is a demo form, so nothing was actually sent; connect it to a form backend (e.g. Formspree, Netlify Forms) or booking system to go live.
-          </div>
-          <form id="booking-form" novalidate>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="b-name">Full name</label>
-                <input type="text" id="b-name" name="name" required>
-                <span class="form-error">Please enter your name.</span>
-              </div>
-              <div class="form-group">
-                <label for="b-phone">Phone number</label>
-                <input type="tel" id="b-phone" name="phone" required>
-                <span class="form-error">Please enter a valid phone number.</span>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="b-email">Email address</label>
-              <input type="email" id="b-email" name="email" required>
-              <span class="form-error">Please enter a valid email address.</span>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="b-service">Service</label>
-                <select id="b-service" name="service" required>
-                  <option value="">Select a service</option>
-                  <option value="sports">Running &amp; Sports Assessment — £85</option>
-                  <option value="diabetic">Diabetic Foot Health Check — £45</option>
-                </select>
-                <span class="form-error">Please select a service.</span>
-              </div>
-              <div class="form-group">
-                <label for="b-date">Preferred date</label>
-                <input type="date" id="b-date" name="date" required>
-                <span class="form-error">Please choose a preferred date.</span>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="b-time">Preferred time</label>
-              <select id="b-time" name="time" required>
-                <option value="">Select a time</option>
-                <option value="morning">Morning (7am – 11am)</option>
-                <option value="midday">Midday (11am – 2pm)</option>
-                <option value="afternoon">Afternoon (2pm – 4pm)</option>
-                <option value="evening">Evening (4pm – 8pm, Mon/Tue/Thu only)</option>
-              </select>
-              <span class="form-error">Please select a preferred time.</span>
-            </div>
-            <div class="form-group">
-              <label for="b-notes">Anything we should know? (optional)</label>
-              <textarea id="b-notes" name="notes" placeholder="e.g. specific symptoms, previous injuries, referral details"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary btn-block">Request Appointment</button>
-            <p class="form-note">This form sends a request only — we'll confirm your exact appointment time by phone or email. For same-day or urgent bookings, please call us directly on 0191 645 2535.</p>
-          </form>
+          <p class="form-note" style="margin-top: 24px;">Prefer to speak to someone first? Call us on <a href="tel:01916452535">0191 645 2535</a> or <a href="contact.html">send us a message</a>.</p>
         </div>
 
         <div>
@@ -135,7 +82,7 @@
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer" style="max-height: 200px;">
-              <p>Please bring the shoes you wear most often (including sports trainers, if relevant), any existing insoles or orthotics, and a list of current medications if you're being seen for diabetic foot care.</p>
+              <p>Please bring the shoes you wear most often (including sports trainers, if relevant) and any existing insoles or orthotics, so we can compare them against your footscan® results.</p>
             </div>
           </div>
 
@@ -217,8 +164,7 @@
         <ul>
           <li><a href="services.html#scanning">footscan&reg; Gait Analysis</a></li>
           <li><a href="services.html#orthotics">Phits Orthotics</a></li>
-          <li><a href="services.html#sports">Sports Assessment</a></li>
-          
+          <li><a href="services.html#biomechanics">Biomechanical Assessment</a></li>
         </ul>
       </div>
       <div class="footer-col">

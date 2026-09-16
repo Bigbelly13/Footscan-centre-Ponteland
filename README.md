@@ -7,8 +7,18 @@ A static, responsive website for a foot-scanning and sports rehabilitation clini
 - `index.html` — Home page with hero, services overview, process, testimonials
 - `services.html` — Full service descriptions and pricing table
 - `about.html` — Clinic story, values, and team
-- `contact.html` — Contact details, opening hours, map, and contact form
-- `book-appointment.html` — Appointment request form and booking FAQ
+- `contact.html` — Contact details, opening hours, map, and general enquiry form
+- `book-appointment.html` — Booking info (links out to Momentum) and FAQ
+
+## The three services
+
+Footscan Centre Ponteland offers exactly three services, and all three are delivered by **Momentum Sports Injury Clinic** and booked — and priced — separately through Momentum's own booking system, not through this site:
+
+- **Footscan Assessment** — £90 (45 min)
+- **Phits Orthotics** — £240 per pair
+- **Biomechanical Assessment** — £80 (60 min)
+
+There is no in-house podiatry, chiropody, diabetic foot screening, nail/skin care, or general sports/running assessment — those were removed from an earlier draft once the actual scope was confirmed. If that scope ever expands, add the new service consistently across `index.html` (service card), `services.html` (dedicated section + pricing row), `book-appointment.html` (booking summary), and every page's footer service list.
 
 ## Structure
 
@@ -20,28 +30,29 @@ A static, responsive website for a foot-scanning and sports rehabilitation clini
 ├── book-appointment.html
 ├── css/style.css
 ├── js/script.js
-└── images/            (empty — add real photos here)
+└── images/            (hero + team photos already in place; add more real photos as needed)
 ```
 
-## Footscan, Orthotics &amp; Biomechanical Assessment booking (Momentum Sports Injury Clinic)
+## Booking links (Momentum Sports Injury Clinic)
 
-These three services are delivered in partnership with **Momentum Sports Injury Clinic** (momentumsic.com) and are each booked — and priced — separately:
-
-- **Footscan Assessment** — £90 (45 min)
-- **Phits Orthotics** — £240 per pair
-- **Biomechanical Assessment** — £80 (60 min)
-
-They link out to Momentum's real booking system instead of the local placeholder form:
+All three services link out to Momentum's real booking system:
 
 - Booking: `https://momentumsic.com/book-online/`
 - Footscan/Orthotics service info: `https://momentumsic.com/services/footscan-and-orthotics/`
 - "What is a Footscan?": `https://momentumsic.com/what-is-the-footscan-assessment/`
 
-These appear on `index.html` (service card notes), `services.html` (`#scanning`, `#orthotics` and `#biomechanics` sections, plus the pricing table), and `book-appointment.html` (partner callout above the local form). The local booking form itself was trimmed to only the remaining in-house services (sports assessment, diabetic foot care) since Momentum's own system handles these three bookings. If Momentum restructures their URLs, double-check these links still resolve.
+These appear on `index.html` (service card notes), `services.html` (`#scanning`, `#orthotics` and `#biomechanics` sections, plus the pricing table), and `book-appointment.html` (the whole page is now built around this booking info — see below). If Momentum restructures their URLs, double-check these links still resolve.
 
-### Podiatry references removed
+### Scope corrections: podiatry, sports assessment and diabetic care all removed
 
-Carl Bell and Kate Disley are physiotherapy/sport rehabilitation practitioners, not podiatrists, so every mention of "podiatry"/"chiropody" has been removed site-wide — including the standalone "General Podiatry & Chiropody" service (nail care, corns, calluses, verruca and ingrown toenail treatment), which was in podiatrist/chiropodist scope of practice and not something this team offers. This dropped one row from the pricing table, one option from the booking form, and the "General Podiatry" links from every page's footer and nav. Hero copy, page titles and meta descriptions were reworded to "sports rehabilitation" instead. The "Diabetic & At-Risk Foot Care" service on `services.html` still mentions "nail and skin care" in its bullet list — worth a similar scope check if that's not something the team actually does.
+Two rounds of corrections narrowed the site down to the real three-service scope:
+
+1. **Podiatry/chiropody removed.** Carl Bell and Kate Disley are physiotherapy/sport rehabilitation practitioners, not podiatrists, so every mention of "podiatry"/"chiropody" was removed, including the standalone "General Podiatry & Chiropody" service (nail care, corns, calluses, verruca and ingrown toenail treatment).
+2. **Sports assessment and diabetic foot care removed.** The clinic confirmed it does not provide nail/footbed care, podiatry, or diabetic risk screening — the *only* services are Footscan Assessment, Biomechanical Assessment and Phits Orthotics. This meant removing the "Running & Sports Assessment" and "Diabetic & At-Risk Foot Care" sections entirely (not just renaming them), including their service cards, dedicated `services.html` sections, pricing rows, and footer links.
+
+The second round also removed `book-appointment.html`'s local "Appointment request" form: it existed only to book the in-house services that turned out not to exist, so once Sports Assessment and Diabetic Foot Care were gone there was nothing left for it to book. The page is now a single booking-info card (the three real services, their prices, and links to Momentum's booking system) alongside the FAQ, rather than a form + FAQ layout. The general enquiry form on `contact.html` is unaffected — that's for questions, not appointment booking, and was never service-specific.
+
+If further corrections come in, the pattern to check is the same each time: `index.html` service grid, `services.html` sections + pricing table, `book-appointment.html` booking summary, and the "Services" list in every page's footer (`index.html`, `services.html`, `about.html`, `contact.html`, `book-appointment.html` — it's duplicated identically on all five).
 
 ### Contact details now use Momentum's real Ponteland site
 
@@ -75,12 +86,11 @@ Bio text was sourced from search-engine snippets of `momentumsic.com/team/carl-b
 
 This is a demo build. Every page includes a yellow banner noting what's still placeholder — **remove that banner once real content is in place**. Address/phone/email/hours, Footscan/Orthotics/Biomechanical pricing, and the Carl Bell/Kate Disley bios and photos are already real (see above); the following are still fictional and need updating before going live:
 
-- **Pricing** on `services.html` — currently illustrative figures for the remaining in-house services (sports assessment, diabetic care).
 - **Testimonials** on `index.html` — currently fictional placeholder quotes.
 - **Map embed** on `contact.html` — approximate coordinates only; verify against the exact building/unit, or swap for a Google Maps embed.
 - **Social links** in the footer — currently placeholder `#` links.
-- **Images** — team photos for Carl and Kate are real (`images/`); everything else (hero graphic, service icons, clinic exterior) still uses inline SVG illustrations instead of photos.
-- **Forms** — the contact and booking forms are front-end only (they validate and show a success message but don't send anywhere). Connect them to a real backend such as [Formspree](https://formspree.io), [Netlify Forms](https://docs.netlify.com/forms/setup/), or a booking system API.
+- **Images** — the homepage hero photo and Carl/Kate's team photos are real (`images/`); service-section illustrations and icons elsewhere still use inline SVG instead of photos. Three further real Phits/footscan photos (orthotics packaging, the Phits+ device, a pressure-mapped shoe) are in `images/` but not yet placed on any page.
+- **Contact form** — `contact.html`'s general enquiry form is front-end only (it validates and shows a success message but doesn't send anywhere). Connect it to a real backend such as [Formspree](https://formspree.io), [Netlify Forms](https://docs.netlify.com/forms/setup/), or similar. `book-appointment.html` no longer has its own form — booking goes through Momentum's system instead (see above).
 
 ## Local preview
 
