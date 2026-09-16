@@ -58,12 +58,21 @@ The Footscan and Orthotics sections use accurate, sourced technical detail about
 
 These are sourced from search-engine snippets of the manufacturer's own pages, since direct fetch of `gaitandmotion.co.uk` and `materialise.com` is blocked in this build environment — worth verifying the exact wording/claims against their live pages before publishing, and confirming Momentum's Ponteland clinic actually uses footscan®/Phits (rather than a different pressure-plate or orthotics system) if you haven't already.
 
+### Team bios (Carl Bell and Kate Disley)
+
+`about.html`'s team section now shows two real Momentum Sports Injury Clinic practitioners instead of fictional placeholders:
+
+- **Carl Bell** — Physiotherapy Manager, HCPC & CSP registered
+- **Kate Disley** — Sport Rehabilitator, BASRaT
+
+Bio text was sourced from search-engine snippets of `momentumsic.com/team/carl-bell/` and `momentumsic.com/team/kate-disley/` (direct fetch blocked, as above) — worth checking the exact current wording, titles and photos against Momentum's live team pages before publishing, and confirming Carl and Kate are the right two to feature for Footscan/Phits/Biomechanical Assessment specifically (their bios reflect their general physio/rehab roles at Momentum, not necessarily a dedicated Footscan/orthotics specialism). Team photos are still placeholder icons — swap in real photos when available.
+
 ## ⚠️ Before publishing — replace remaining placeholder content
 
-This is a demo build. Every page includes a yellow banner noting what's still placeholder — **remove that banner once real content is in place**. Address/phone/email/hours are already real (see above); the following are still fictional and need updating before going live:
+This is a demo build. Every page includes a yellow banner noting what's still placeholder — **remove that banner once real content is in place**. Address/phone/email/hours, Footscan/Orthotics/Biomechanical pricing, and the Carl Bell/Kate Disley bios are already real (see above); the following are still fictional and need updating before going live:
 
-- **Team bios** on `about.html` — currently fictional placeholder names/photos.
-- **Pricing** on `services.html` — currently illustrative figures for the in-house services (Footscan/Orthotics rows already link to Momentum's own pricing).
+- **Team photos** on `about.html` — still placeholder icons, not real photos.
+- **Pricing** on `services.html` — currently illustrative figures for the remaining in-house services (sports assessment, diabetic care, general podiatry).
 - **Testimonials** on `index.html` — currently fictional placeholder quotes.
 - **Map embed** on `contact.html` — approximate coordinates only; verify against the exact building/unit, or swap for a Google Maps embed.
 - **Social links** in the footer — currently placeholder `#` links.
