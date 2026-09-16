@@ -23,7 +23,9 @@ document.addEventListener('DOMContentLoaded', function () {
   var currentPage = (window.location.pathname.split('/').pop() || 'index.html');
   document.querySelectorAll('.nav-links a').forEach(function (link) {
     var href = link.getAttribute('href');
-    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+    var isCurrent = href === currentPage || (currentPage === '' && href === 'index.html');
+    var isBlogArticle = href === 'blog.html' && currentPage.indexOf('blog-') === 0;
+    if (isCurrent || isBlogArticle) {
       link.classList.add('active');
     }
   });

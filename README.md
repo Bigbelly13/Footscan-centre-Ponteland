@@ -4,11 +4,20 @@ A static, responsive website for a foot-scanning and sports rehabilitation clini
 
 ## Pages
 
-- `index.html` — Home page with hero, services overview, process, testimonials
+- `index.html` — Home page with hero, services overview, process, testimonials, blog teaser
 - `services.html` — Full service descriptions and pricing table
+- `blog.html` — Blog listing (article cards + one "coming soon" placeholder)
+- `blog-footscan-assessment.html` — Full article: what a footscan® assessment involves
+- `blog-phits-vs-traditional-orthotics.html` — Full article: Phits vs. traditional orthotics
 - `about.html` — Clinic story, values, and team
 - `contact.html` — Contact details, opening hours, map, and general enquiry form
 - `book-appointment.html` — Embedded Rehab Guru booking calendar and FAQ
+
+## Blog
+
+`blog.html` lists posts as `.blog-card` items; two are real full articles (`blog-footscan-assessment.html`, `blog-phits-vs-traditional-orthotics.html`), and a third ("Why a Biomechanical Assessment Looks Beyond Your Feet") is a `.blog-card.coming-soon` placeholder with no link yet — a pattern to reuse for future draft posts that shouldn't be clickable yet. "Blog" is wired into the nav and footer "Explore" list on **every** page (all 8 HTML files, including the blog pages themselves), and the homepage repeats the same three cards as a "From the blog" teaser section. `js/script.js`'s active-nav-link logic also highlights "Blog" when viewing any `blog-*.html` article, not just `blog.html` itself.
+
+**To add a new post:** copy one of the two existing article files as a template (keeps the `.article-hero` / `.article-photo` / `.article-body` / `.article-author` structure and full nav+footer boilerplate), write the content, then add a matching `.blog-card` to both `blog.html` and the homepage's "From the blog" section (or replace the "coming soon" card with a real one once that article is written).
 
 ## The three services
 
@@ -25,6 +34,9 @@ There is no in-house podiatry, chiropody, diabetic foot screening, nail/skin car
 ```
 ├── index.html
 ├── services.html
+├── blog.html
+├── blog-footscan-assessment.html
+├── blog-phits-vs-traditional-orthotics.html
 ├── about.html
 ├── contact.html
 ├── book-appointment.html
