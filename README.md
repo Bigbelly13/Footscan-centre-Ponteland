@@ -33,15 +33,24 @@ Footscan and Custom Orthotics appointments are delivered in partnership with **M
 
 These appear on `index.html` (service card notes), `services.html` (`#scanning` and `#orthotics` sections, plus the pricing table), and `book-appointment.html` (partner callout above the local form). The local booking form itself was trimmed to only the in-house services (sports assessment, biomechanical assessment, diabetic foot care, general podiatry) since Momentum's own system handles Footscan/Orthotics bookings. If Momentum restructures their URLs, double-check these links still resolve.
 
-## ⚠️ Before publishing — replace all placeholder content
+### Contact details now use Momentum's real Ponteland site
 
-This is a demo build. Every page includes a yellow banner reminding visitors that content is a placeholder — **remove that banner once real content is in place**. Update the following before going live:
+The header, footer, and `contact.html` now show Momentum Sports Injury Clinic's actual Ponteland contact details (sourced from search-engine snippets, since direct access to momentumsic.com is blocked in the environment this site was built in — worth double-checking against the live site or Momentum directly):
 
-- **Business details**: address (`12 High Street, Ponteland...`), phone number (`01661 000 000`), email address, and opening hours — these appear in every page footer, the header, and on `contact.html`.
+- **Address:** Unit 4, The Green House, Meadowfield Industrial Estate, Ponteland, Newcastle upon Tyne, NE20 9SD
+- **Phone:** 0191 645 2535
+- **Email:** info@momentumsic.com
+- **Map:** `contact.html`'s embed points at approximate coordinates for Meadowfield Industrial Estate (55.0518, -1.7500) — not verified against the exact building.
+
+## ⚠️ Before publishing — replace remaining placeholder content
+
+This is a demo build. Every page includes a yellow banner noting what's still placeholder — **remove that banner once real content is in place**. Address/phone/email are already real (see above); the following are still fictional and need updating before going live:
+
 - **Team bios** on `about.html` — currently fictional placeholder names/photos.
-- **Pricing** on `services.html` — currently illustrative figures.
+- **Pricing** on `services.html` — currently illustrative figures for the in-house services (Footscan/Orthotics rows already link to Momentum's own pricing).
+- **Opening hours** on `contact.html` — currently placeholder hours; confirm against Momentum's actual Ponteland hours.
 - **Testimonials** on `index.html` — currently fictional placeholder quotes.
-- **Map embed** on `contact.html` — currently a generic OpenStreetMap view of Ponteland; replace with your exact location (or swap for a Google Maps embed).
+- **Map embed** on `contact.html` — approximate coordinates only; verify against the exact building/unit, or swap for a Google Maps embed.
 - **Social links** in the footer — currently placeholder `#` links.
 - **Images** — the site currently uses simple inline SVG illustrations/icons instead of photos. Add real clinic/team photos to `images/` and reference them in the HTML.
 - **Forms** — the contact and booking forms are front-end only (they validate and show a success message but don't send anywhere). Connect them to a real backend such as [Formspree](https://formspree.io), [Netlify Forms](https://docs.netlify.com/forms/setup/), or a booking system API.
