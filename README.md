@@ -1,6 +1,6 @@
 # Footscan Centre Ponteland — Website
 
-A static, responsive website for a foot-scanning and podiatry clinic in Ponteland, Newcastle upon Tyne. Built with plain HTML/CSS/JavaScript — no build step or framework required, so it can be deployed anywhere (GitHub Pages, Netlify, Vercel, or any static web host).
+A static, responsive website for a foot-scanning and sports rehabilitation clinic in Ponteland, Newcastle upon Tyne. Built with plain HTML/CSS/JavaScript — no build step or framework required, so it can be deployed anywhere (GitHub Pages, Netlify, Vercel, or any static web host).
 
 ## Pages
 
@@ -37,7 +37,11 @@ They link out to Momentum's real booking system instead of the local placeholder
 - Footscan/Orthotics service info: `https://momentumsic.com/services/footscan-and-orthotics/`
 - "What is a Footscan?": `https://momentumsic.com/what-is-the-footscan-assessment/`
 
-These appear on `index.html` (service card notes), `services.html` (`#scanning`, `#orthotics` and `#biomechanics` sections, plus the pricing table), and `book-appointment.html` (partner callout above the local form). The local booking form itself was trimmed to only the remaining in-house services (sports assessment, diabetic foot care, general podiatry) since Momentum's own system handles these three bookings. If Momentum restructures their URLs, double-check these links still resolve.
+These appear on `index.html` (service card notes), `services.html` (`#scanning`, `#orthotics` and `#biomechanics` sections, plus the pricing table), and `book-appointment.html` (partner callout above the local form). The local booking form itself was trimmed to only the remaining in-house services (sports assessment, diabetic foot care) since Momentum's own system handles these three bookings. If Momentum restructures their URLs, double-check these links still resolve.
+
+### Podiatry references removed
+
+Carl Bell and Kate Disley are physiotherapy/sport rehabilitation practitioners, not podiatrists, so every mention of "podiatry"/"chiropody" has been removed site-wide — including the standalone "General Podiatry & Chiropody" service (nail care, corns, calluses, verruca and ingrown toenail treatment), which was in podiatrist/chiropodist scope of practice and not something this team offers. This dropped one row from the pricing table, one option from the booking form, and the "General Podiatry" links from every page's footer and nav. Hero copy, page titles and meta descriptions were reworded to "sports rehabilitation" instead. The "Diabetic & At-Risk Foot Care" service on `services.html` still mentions "nail and skin care" in its bullet list — worth a similar scope check if that's not something the team actually does.
 
 ### Contact details now use Momentum's real Ponteland site
 
@@ -71,7 +75,7 @@ Bio text was sourced from search-engine snippets of `momentumsic.com/team/carl-b
 
 This is a demo build. Every page includes a yellow banner noting what's still placeholder — **remove that banner once real content is in place**. Address/phone/email/hours, Footscan/Orthotics/Biomechanical pricing, and the Carl Bell/Kate Disley bios and photos are already real (see above); the following are still fictional and need updating before going live:
 
-- **Pricing** on `services.html` — currently illustrative figures for the remaining in-house services (sports assessment, diabetic care, general podiatry).
+- **Pricing** on `services.html` — currently illustrative figures for the remaining in-house services (sports assessment, diabetic care).
 - **Testimonials** on `index.html` — currently fictional placeholder quotes.
 - **Map embed** on `contact.html` — approximate coordinates only; verify against the exact building/unit, or swap for a Google Maps embed.
 - **Social links** in the footer — currently placeholder `#` links.
