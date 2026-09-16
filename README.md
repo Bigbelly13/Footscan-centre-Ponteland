@@ -23,6 +23,16 @@ A static, responsive website for a foot-scanning and podiatry clinic in Pontelan
 └── images/            (empty — add real photos here)
 ```
 
+## Footscan &amp; Orthotics booking (Momentum Sports Injury Clinic)
+
+Footscan and Custom Orthotics appointments are delivered in partnership with **Momentum Sports Injury Clinic** (momentumsic.com), so those two services link out to Momentum's real booking system instead of the local placeholder form:
+
+- Booking: `https://momentumsic.com/book-online/`
+- Footscan/Orthotics service info: `https://momentumsic.com/services/footscan-and-orthotics/`
+- "What is a Footscan?": `https://momentumsic.com/what-is-the-footscan-assessment/`
+
+These appear on `index.html` (service card notes), `services.html` (`#scanning` and `#orthotics` sections, plus the pricing table), and `book-appointment.html` (partner callout above the local form). The local booking form itself was trimmed to only the in-house services (sports assessment, biomechanical assessment, diabetic foot care, general podiatry) since Momentum's own system handles Footscan/Orthotics bookings. If Momentum restructures their URLs, double-check these links still resolve.
+
 ## ⚠️ Before publishing — replace all placeholder content
 
 This is a demo build. Every page includes a yellow banner reminding visitors that content is a placeholder — **remove that banner once real content is in place**. Update the following before going live:
