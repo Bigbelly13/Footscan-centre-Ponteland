@@ -28,7 +28,7 @@ A static, responsive website for a foot-scanning and podiatry clinic in Pontelan
 These three services are delivered in partnership with **Momentum Sports Injury Clinic** (momentumsic.com) and are each booked — and priced — separately:
 
 - **Footscan Assessment** — £90 (45 min)
-- **Custom Orthotics** — £240 per pair
+- **Phits Orthotics** — £240 per pair
 - **Biomechanical Assessment** — £80 (60 min)
 
 They link out to Momentum's real booking system instead of the local placeholder form:
@@ -48,6 +48,15 @@ The header, footer, and `contact.html` now show Momentum Sports Injury Clinic's 
 - **Email:** info@momentumsic.com
 - **Opening hours:** Mon 7am–8pm, Tue 8am–8pm, Wed 8am–4pm, Thu 7am–8pm, Fri 8am–4pm, Sat/Sun closed
 - **Map:** `contact.html`'s embed points at approximate coordinates for Meadowfield Industrial Estate (55.0518, -1.7500) — not verified against the exact building.
+
+### Real technology content (footscan® and Phits)
+
+The Footscan and Orthotics sections use accurate, sourced technical detail about the actual products/brands rather than generic marketing copy:
+
+- **footscan®** — the pressure-plate gait-analysis system (developed by RSscan, now part of Materialise). Specs cited (up to 48,384 sensors, up to 500 scans/sec, dynamic — not just static — pressure mapping) come from Materialise's own technical documentation and peer-reviewed reliability studies.
+- **Phits** — the 3D-printed custom orthotic insole product manufactured in the UK by **Gait & Motion Technology Ltd** (Bury St Edmunds, Suffolk), designed from footscan® gait data. Facts cited (Bluesint PA12 material from 100% recycled stock, 100% green-energy manufacturing, 0.1mm accuracy, less than half the weight of a traditional orthotic, D3O® impact protection) come from Gait & Motion Technology Ltd's own product page: `https://www.gaitandmotion.co.uk/phits3dprint`.
+
+These are sourced from search-engine snippets of the manufacturer's own pages, since direct fetch of `gaitandmotion.co.uk` and `materialise.com` is blocked in this build environment — worth verifying the exact wording/claims against their live pages before publishing, and confirming Momentum's Ponteland clinic actually uses footscan®/Phits (rather than a different pressure-plate or orthotics system) if you haven't already.
 
 ## ⚠️ Before publishing — replace remaining placeholder content
 
