@@ -11,11 +11,13 @@ A static, responsive website for a foot-scanning and sports rehabilitation clini
 - `blog-phits-vs-traditional-orthotics.html` — Full article: Phits vs. traditional orthotics
 - `about.html` — Clinic story, values, and team
 - `contact.html` — Contact details, opening hours, map, and general enquiry form
-- `book-appointment.html` — Embedded Rehab Guru booking calendar and FAQ
+- `book-appointment.html` — Embedded Rehab Guru booking calendar and a short on-page FAQ
+- `faq.html` — Full FAQ page (9 questions, `FAQPage` structured data) — the book-appointment FAQ links here for "more questions"
+- `conditions.html` — Gait-related conditions (plantar fasciitis, shin splints, overpronation, knee/hip/back pain, Achilles tendinopathy) that link back to the relevant service, written to stay within the real scope (no diagnosis/treatment claims)
 
 ## Blog
 
-`blog.html` lists posts as `.blog-card` items; two are real full articles (`blog-footscan-assessment.html`, `blog-phits-vs-traditional-orthotics.html`), and a third ("Why a Biomechanical Assessment Looks Beyond Your Feet") is a `.blog-card.coming-soon` placeholder with no link yet — a pattern to reuse for future draft posts that shouldn't be clickable yet. "Blog" is wired into the nav and footer "Explore" list on **every** page (all 8 HTML files, including the blog pages themselves), and the homepage repeats the same three cards as a "From the blog" teaser section. `js/script.js`'s active-nav-link logic also highlights "Blog" when viewing any `blog-*.html` article, not just `blog.html` itself.
+`blog.html` lists posts as `.blog-card` items; two are real full articles (`blog-footscan-assessment.html`, `blog-phits-vs-traditional-orthotics.html`), and a third ("Why a Biomechanical Assessment Looks Beyond Your Feet") is a `.blog-card.coming-soon` placeholder with no link yet — a pattern to reuse for future draft posts that shouldn't be clickable yet. "Blog" is wired into the nav and footer "Explore" list on **every** page (all 10 HTML files, including the blog pages themselves), and the homepage repeats the same three cards as a "From the blog" teaser section. `js/script.js`'s active-nav-link logic also highlights "Blog" when viewing any `blog-*.html` article, not just `blog.html` itself.
 
 **To add a new post:** copy one of the two existing article files as a template (keeps the `.article-hero` / `.article-photo` / `.article-body` / `.article-author` structure and full nav+footer boilerplate), write the content, then add a matching `.blog-card` to both `blog.html` and the homepage's "From the blog" section (or replace the "coming soon" card with a real one once that article is written).
 
@@ -40,6 +42,11 @@ There is no in-house podiatry, chiropody, diabetic foot screening, nail/skin car
 ├── about.html
 ├── contact.html
 ├── book-appointment.html
+├── faq.html
+├── conditions.html
+├── robots.txt
+├── sitemap.xml
+├── favicon.svg
 ├── css/style.css
 ├── js/script.js
 └── images/            (hero + team photos already in place; add more real photos as needed)
@@ -105,10 +112,35 @@ These are sourced from search-engine snippets of the manufacturer's own pages, s
 
 Bio text was sourced from search-engine snippets of `momentumsic.com/team/carl-bell/` and `momentumsic.com/team/kate-disley/` (direct fetch blocked, as above) — worth checking the exact current wording, titles and photos against Momentum's live team pages before publishing, and confirming Carl and Kate are the right two to feature for Footscan/Phits/Biomechanical Assessment specifically (their bios reflect their general physio/rehab roles at Momentum, not necessarily a dedicated Footscan/orthotics specialism). Their real photos (`images/carl-bell.png`, `images/kate-disley.png`) were supplied directly and are now in place.
 
+## SEO
+
+Following a comparative SEO audit against two local competitors, the technical SEO gaps it identified have been implemented sitewide (not just reported):
+
+- **`robots.txt`** — allows all crawlers, points to `sitemap.xml`.
+- **`sitemap.xml`** — lists all 10 pages with `lastmod`/`changefreq`/`priority`. Update `lastmod` and re-add an entry whenever a page is added or a blog post is published.
+- **Canonical tags** — every page has `<link rel="canonical">` pointing at its own URL, to avoid duplicate-content issues.
+- **Open Graph + Twitter Card tags** — every page has `og:title`, `og:description`, `og:type`, `og:url`, `og:image`, `og:site_name`, `og:locale`, and matching `twitter:*` tags, so links shared on social/WhatsApp/Slack render a proper preview card.
+- **Favicon** — `favicon.svg` reuses the site's brand mark (teal gradient + foot icon), linked from every page via `<link rel="icon" type="image/svg+xml" href="favicon.svg">`.
+- **Structured data (JSON-LD)**:
+  - Every page carries a `MedicalBusiness` (LocalBusiness subtype) schema block with name, address, phone, email, price range, opening hours and both practitioners as `employee` entries — this is what powers rich local-search/Knowledge-Panel-style results.
+  - Both blog articles additionally carry an `Article` schema block (headline, image, author, publisher, dates).
+  - `faq.html` additionally carries a `FAQPage` schema block matching its on-page questions — a strong candidate for FAQ rich results in search.
+- **Title/meta description length pass** — titles and descriptions across the site were rewritten to fit within Google's typical display limits (~60 char titles, ~155–160 char descriptions), and each was checked for a Ponteland/Newcastle-area keyword to defend the "Ponteland gap" the audit identified (neither competitor targets Ponteland specifically).
+- **New content pages for long-tail/local search**: `faq.html` and `conditions.html` (see "Pages" above), both linked from every page's footer "Explore" list, plus contextual links from `services.html` and `book-appointment.html`.
+
+### ⚠️ Placeholder production domain
+
+All canonical/OG/Twitter/JSON-LD URLs use a placeholder domain, **`https://www.footscancentreponteland.co.uk`**, since the real production domain wasn't known at build time. Before publishing, find-and-replace this domain across every `.html` file, `robots.txt` and `sitemap.xml` with the real one — otherwise canonical tags and social previews will point at the wrong address.
+
+### ⚠️ One SEO action that can't be done from code
+
+Claiming and optimising a **Google Business Profile** for the Ponteland address (name, category, hours, photos, and — importantly — collecting genuine Google reviews) is one of the highest-impact local SEO moves available, but it requires the business owner to verify ownership directly with Google (postcard/phone/email verification tied to a Google account) — this cannot be done by editing the website. Worth doing alongside publishing this site.
+
 ## ⚠️ Before publishing — replace remaining placeholder content
 
 This is a demo build. Every page includes a yellow banner noting what's still placeholder — **remove that banner once real content is in place**. Address/phone/email/hours, Footscan/Orthotics/Biomechanical pricing, and the Carl Bell/Kate Disley bios and photos are already real (see above); the following are still fictional and need updating before going live:
 
+- **Placeholder domain** — `https://www.footscancentreponteland.co.uk` is used in every canonical/OG/Twitter/JSON-LD tag and in `robots.txt`/`sitemap.xml`; replace with the real production domain (see "SEO" above).
 - **Testimonials** on `index.html` — currently fictional placeholder quotes.
 - **Map embed** on `contact.html` — approximate coordinates only; verify against the exact building/unit, or swap for a Google Maps embed.
 - **Social links** in the footer — currently placeholder `#` links.
