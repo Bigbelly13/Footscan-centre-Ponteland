@@ -519,6 +519,15 @@ section {
   display: block;
 }
 
+.split-media-duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.split-media-duo img {
+  min-height: 320px;
+}
+
 .check-list {
   list-style: none;
   margin: 0;
