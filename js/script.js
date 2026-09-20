@@ -82,20 +82,58 @@ document.addEventListener('DOMContentLoaded', function () {
       });
 
       var successBox = document.getElementById('form-success');
+      var errorBox = document.getElementById('form-error-general');
 
-      if (valid) {
-        form.reset();
-        form.querySelectorAll('.invalid').forEach(function (g) {
-          g.classList.remove('invalid');
-        });
+      if (!valid) {
         if (successBox) {
-          successBox.classList.add('visible');
-          successBox.setAttribute('tabindex', '-1');
-          successBox.focus();
+          successBox.classList.remove('visible');
         }
-      } else if (successBox) {
-        successBox.classList.remove('visible');
+        return;
       }
+
+      if (errorBox) {
+        errorBox.classList.remove('visible');
+      }
+
+      var submitBtn = form.querySelector('button[type="submit"]');
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.dataset.originalText = submitBtn.dataset.originalText || submitBtn.textContent;
+        submitBtn.textContent = 'Sending…';
+      }
+
+      fetch(form.action, {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: new FormData(form)
+      })
+        .then(function (response) {
+          if (!response.ok) {
+            throw new Error('Form submission failed');
+          }
+          form.reset();
+          form.querySelectorAll('.invalid').forEach(function (g) {
+            g.classList.remove('invalid');
+          });
+          if (successBox) {
+            successBox.classList.add('visible');
+            successBox.setAttribute('tabindex', '-1');
+            successBox.focus();
+          }
+        })
+        .catch(function () {
+          if (errorBox) {
+            errorBox.classList.add('visible');
+            errorBox.setAttribute('tabindex', '-1');
+            errorBox.focus();
+          }
+        })
+        .finally(function () {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = submitBtn.dataset.originalText;
+          }
+        });
     });
   }
 

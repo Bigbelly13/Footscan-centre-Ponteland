@@ -95,7 +95,7 @@
 <body>
 
 <div class="demo-banner">
-  <strong>Note:</strong> This site is live, but two things are still being finished — the footer social links don’t go anywhere yet, and the contact form doesn’t send messages yet. For now, please call <a href="tel:01916452535">0191 645 2535</a> or email <a href="mailto:info@momentumsic.com">info@momentumsic.com</a> directly.
+  <strong>Note:</strong> This site is live, but two things are still being finished — the footer social links don’t go anywhere yet, and the contact form is newly connected. If you don’t hear back after using it, please call <a href="tel:01916452535">0191 645 2535</a> or email <a href="mailto:info@momentumsic.com">info@momentumsic.com</a> directly.
 </div>
 
 <header class="site-header">
@@ -198,9 +198,16 @@
         <div class="form-card">
           <h2>Send us a message</h2>
           <div class="form-success" id="form-success">
-            Thanks for your message! This is a demo form, so nothing was actually sent — connect it to a form backend (e.g. Formspree, Netlify Forms) to go live.
+            Thanks for your message! We'll get back to you within one working day.
           </div>
-          <form id="booking-form" novalidate>
+          <div class="form-error-general" id="form-error-general">
+            Something went wrong sending your message. Please call <a href="tel:01916452535">0191 645 2535</a> or email <a href="mailto:info@momentumsic.com">info@momentumsic.com</a> directly.
+          </div>
+          <form id="booking-form" novalidate action="https://formsubmit.co/ajax/info@momentumsic.com" method="POST">
+            <input type="hidden" name="_subject" value="New enquiry from Footscan Centre Ponteland website">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
             <div class="form-row">
               <div class="form-group">
                 <label for="c-name">Full name</label>

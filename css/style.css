@@ -912,6 +912,26 @@ section {
   display: block;
 }
 
+.form-error-general {
+  display: none;
+  background: rgba(192, 57, 43, 0.08);
+  border: 1px solid #c0392b;
+  color: #c0392b;
+  padding: 16px 18px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 0.92rem;
+}
+
+.form-error-general.visible {
+  display: block;
+}
+
+.form-error-general a {
+  color: inherit;
+  text-decoration: underline;
+}
+
 /* ---- Blog ---- */
 .blog-card {
   background: #fff;
