@@ -4,7 +4,7 @@ A static, responsive website for a foot-scanning and sports rehabilitation clini
 
 ## Pages
 
-- `index.html` — Home page with hero, services overview, process, testimonials, blog teaser
+- `index.html` — Home page with hero, services overview, process, blog teaser
 - `services.html` — Full service descriptions and pricing table
 - `blog.html` — Blog listing (article cards + one "coming soon" placeholder)
 - `blog-footscan-assessment.html` — Full article: what a footscan® assessment involves
@@ -136,16 +136,19 @@ All canonical/OG/Twitter/JSON-LD URLs use a placeholder domain, **`https://www.f
 
 Claiming and optimising a **Google Business Profile** for the Ponteland address (name, category, hours, photos, and — importantly — collecting genuine Google reviews) is one of the highest-impact local SEO moves available, but it requires the business owner to verify ownership directly with Google (postcard/phone/email verification tied to a Google account) — this cannot be done by editing the website. Worth doing alongside publishing this site.
 
-## ⚠️ Before publishing — replace remaining placeholder content
+## ⚠️ Known gaps on the live site
 
-This is a demo build. Every page includes a yellow banner noting what's still placeholder — **remove that banner once real content is in place**. Address/phone/email/hours, Footscan/Orthotics/Biomechanical pricing, and the Carl Bell/Kate Disley bios and photos are already real (see above); the following are still fictional and need updating before going live:
+The site is now live (or ready to go live — see "Deploying" below), and every page carries a small notice banner naming the two things below that are still unfinished — **remove that banner once both are resolved**. Address/phone/email/hours, Footscan/Orthotics/Biomechanical pricing, the Carl Bell/Kate Disley bios and photos, and all section imagery are already real (see above). The fictional testimonials that used to sit on `index.html` were removed rather than published as real customer quotes — add a "Client stories" section back once there are genuine reviews to show (the `.testimonial-card` styles are still in `css/style.css`, ready to reuse).
 
-- **Placeholder domain** — `https://www.footscancentreponteland.co.uk` is used in every canonical/OG/Twitter/JSON-LD tag and in `robots.txt`/`sitemap.xml`; replace with the real production domain (see "SEO" above).
-- **Testimonials** on `index.html` — currently fictional placeholder quotes.
+Two functional gaps remain, both called out in the banner:
+
+- **Social links** in the footer — currently placeholder `#` links. Add the real Facebook/Instagram URLs, or remove the icons.
+- **Contact form** — `contact.html`'s general enquiry form is front-end only (it validates and shows a success message but doesn't actually send anywhere). Connect it to a real backend such as [Formspree](https://formspree.io) or [Netlify Forms](https://docs.netlify.com/forms/setup/) so enquiries actually reach the clinic. `book-appointment.html` no longer has its own form — booking goes through Momentum's system instead (see above).
+
+And one more worth doing soon after launch, not urgent enough to block going live:
+
+- **Placeholder domain** — `https://www.footscancentreponteland.co.uk` is used in every canonical/OG/Twitter/JSON-LD tag and in `robots.txt`/`sitemap.xml`. It's a placeholder, not a domain that's actually registered — replace it with the real production domain once you have one (see "SEO" and "Going live on GitHub Pages" below).
 - **Map embed** on `contact.html` — approximate coordinates only; verify against the exact building/unit, or swap for a Google Maps embed.
-- **Social links** in the footer — currently placeholder `#` links.
-- **Images** — the homepage hero photo, Carl/Kate's team photos, all three `services.html` section photos (footscan pressure-mapped shoe, Phits orthotics packaging, the Phits+ device), `about.html`'s "Our story" section (a Carl Bell + Kate Disley duo photo via the `.split-media-duo` layout), and `index.html`'s "Why Footscan Centre" section (reuses the footscan pressure-mapped shoe photo) are all real (`images/`), replacing the abstract SVG placeholders the initial build shipped with. Only small decorative icon badges remain as inline SVG. Note: the Biomechanical Assessment section reuses the Phits+ device photo since there's no dedicated biomechanical-assessment photo available — swap it out if a better one turns up, since that device is really Phits/orthotics hardware, not biomechanical-assessment-specific.
-- **Contact form** — `contact.html`'s general enquiry form is front-end only (it validates and shows a success message but doesn't send anywhere). Connect it to a real backend such as [Formspree](https://formspree.io), [Netlify Forms](https://docs.netlify.com/forms/setup/), or similar. `book-appointment.html` no longer has its own form — booking goes through Momentum's system instead (see above).
 
 ## Local preview
 
@@ -158,4 +161,15 @@ python3 -m http.server 8000
 
 ## Deploying
 
-Any static host works. For GitHub Pages: push this repository, then enable Pages for the branch/folder in the repository settings.
+Any static host works. This branch (`claude/footscan-newcastle-website-srcbij`) is pushed and ready to serve as-is — no build step needed.
+
+### Going live on GitHub Pages
+
+GitHub Pages' "Deploy from a branch" mode has no API/CLI equivalent — the source branch/folder can only be set from the repository's own Settings page, so this is the one step that has to be done manually by someone with admin access to the repo:
+
+1. Go to the repository on GitHub → **Settings** → **Pages**.
+2. Under **Build and deployment** → **Source**, choose **Deploy from a branch**.
+3. Under **Branch**, select `claude/footscan-newcastle-website-srcbij` and folder **/ (root)**, then **Save**.
+4. GitHub builds and publishes within a minute or two; the live URL appears at the top of that same Pages settings page (usually `https://<github-username-or-org>.github.io/<repo-name>/`).
+
+No custom domain is configured yet — see "Placeholder domain" above. Once you do add one (in the same Pages settings page, plus a `CNAME` DNS record at your registrar), remember to also find-and-replace the placeholder `https://www.footscancentreponteland.co.uk` domain throughout the site (canonical tags, Open Graph/Twitter tags, JSON-LD, `robots.txt`, `sitemap.xml`) with the real one, and re-register that real domain in Rehab Guru's dashboard (Account → Appointments → Portal Settings → URLs and Embeds) so the booking calendar on `book-appointment.html` renders for real visitors.
